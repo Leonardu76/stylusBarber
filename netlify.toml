@@ -1,9 +1,18 @@
 [build]
-  command = "npm run build"
-  publish = "/build"
-  base ="/"
+  command = "npm run generate"
+  publish = "dist"
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/pasta1/*"
+  to = "/pasta2/:splat"
   status = 200
+
+[[redirects]]
+  from = "/rota-antiga"
+  to = "/nova-rota"
+  status = 301
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
