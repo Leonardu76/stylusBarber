@@ -1,0 +1,31 @@
+{
+  "slides": [
+    {
+      "id": "1",
+      "url": "",
+      "legend": "",
+      "type": "video"
+    },
+    {
+      "id": "2",
+      "url": "https://raw.githubusercontent.com/Leonardu76/images/main/baber/barber-1979440_1280.jpg",
+      "legend": "",
+      "type": "imagem"
+
+    },
+    {
+      "id": "3",
+      "url": "https://raw.githubusercontent.com/Leonardu76/images/main/baber/barber-5194406_1280.jpg",
+      "legend": "Quisque velit nisi, pretium ut lacinia in, elementum id enim. Nulla quis lorem ut libero malesuada feugiat. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a."
+      ,"type": "imagem"
+
+    },
+    {
+      "id": "4",
+      "url": "https://raw.githubusercontent.com/Leonardu76/images/main/baber/barber-shop-5212059_1280.jpg",
+      "legend": "A BARBEARIA CORTES & ESTILOS É UM ESPAÇO ACOLHEDOR E CONTEMPORÂNEO DEDICADO AO CUIDADO E ESTILO MASCULINO. NOSSOS SERVIÇOS DE BARBEARIA SÃO PROJETADOS PARA HOMENS QUE VALORIZAM UMA APARÊNCIA IMPECÁVEL E DESEJAM UMA EXPERIÊNCIA DE CUIDADO PESSOAL EXCEPCIONAL."
+      ,"type": "imagem"
+
+    }
+  ]
+}
