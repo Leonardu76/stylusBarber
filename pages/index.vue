@@ -11,6 +11,11 @@
           <Banner/>
         </a-layout-content>
       </div>
+
+      <a-layout-content class="about">
+          <About/>
+          <br>
+        </a-layout-content>
       <a-layout-footer>Footer</a-layout-footer>
     </a-layout>
   </a-space>
@@ -26,9 +31,15 @@ export default {
 
 <style scoped>
 body {
-  color: red;
 }
 .header{
   width: 100%;
+}
+
+.about{
+  background: #020101bf;
+  margin-top: 4px;
+
+
 }
 </style>

@@ -4,9 +4,8 @@
     <div class="principal">
         <div class="button">
             <a-button ghost>{{ text }}
-                <a-space>
-                <ScissorOutlined />
-            </a-space>
+                    <ScissorOutlined />
+                    <WhatsAppOutlined />
             </a-button>
 
         </div>
@@ -14,13 +13,47 @@
 </template>
 <script>
 import {
-    ScissorOutlined,
+    ScissorOutlined, WhatsAppOutlined
 } from '@ant-design/icons-vue';
 export default {
     props: {
         text: String
     },
+    components: {
+        ScissorOutlined,
+        WhatsAppOutlined
+    },
 }
 </script>
-<style scoped></style>
+<style scoped>
+.button,
+.anticon-whats-app {
+    transition: 1s;
+}
+
+.ant-btn {
+    font-size: 16px;
+    padding: 0px 21px;
+}
+
+.ant-btn:hover {
+    border-color: rgb(6, 179, 164);
+    color: rgb(6, 179, 164);
+}
+
+.button:hover .anticon-whats-app {
+    transition: 1s;
+    color: rgba(32, 219, 32, 0.685);
+}
+
+.anticon {
+    margin-left: 7px;
+    transition: 1s;
+}
+
+.button:hover .anticon {
+    font-size: 17px;
+    transition: 1s;
+}
+</style>
 

@@ -53,4 +53,9 @@ h1, .whatsapp{
     height: 100%;
     background: rgba(0, 0, 0, 0.767);
 }
+
+.principal{
+    margin-top: 3px;
+}
+
 </style>

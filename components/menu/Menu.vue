@@ -58,7 +58,7 @@ export default {
 .gutter-box:hover{
     font-size: 13.5px;
     transition: 1s;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid rgb(6, 179, 164);;
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
 }

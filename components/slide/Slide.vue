@@ -6,7 +6,7 @@
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
-    height: '700px',
+    height: '730px',
     padding: '20px',
   }" class="slide-with-overlay">
     <div class="overlay">
@@ -42,7 +42,7 @@ export default {
 
 <style scoped>
 :deep(.slick-slide) {
-    max-height: 750px;
+    max-height: 730px;
     overflow: hidden;
 }
 
@@ -64,6 +64,7 @@ export default {
 }
 .background-video{
   width: 100%;
+  height: 750px;
 
 }
 </style>

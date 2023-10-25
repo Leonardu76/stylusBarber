@@ -1,0 +1,13 @@
+{
+    "resume": [
+        {
+            "id": "1",
+            "description": "A Barbearia Cortes & Estilos é um estabelecimento fictício que oferece uma experiência de cuidado pessoal e estilo exclusiva para seus clientes. Localizada no coração da cidade, a barbearia se destaca por sua atmosfera vintage e sofisticada, criando um ambiente acolhedor e aconchegante para homens que buscam cuidar de sua aparência. Os profissionais da Barbearia Cortes & Estilos são especializados em cortes de cabelo e barba, proporcionando serviços de alta qualidade que atendem às necessidades de cada cliente. Eles são conhecidos por sua habilidade artesanal, combinando técnicas tradicionais com as tendências mais modernas, garantindo que todos os clientes saiam com um visual renovado e elegante.",
+            "img": [
+                "https://raw.githubusercontent.com/Leonardu76/images/main/baber/barber-6999313_640.jpg",
+                "https://raw.githubusercontent.com/Leonardu76/images/main/baber/barber-5225281_1280.jpg",
+                "https://raw.githubusercontent.com/Leonardu76/images/main/baber/hair-5428013_1280.jpg"
+            ]
+        }
+    ]
+}
