@@ -63,7 +63,7 @@ export default {
     background: rgba(0, 0, 0, 0.5);
 }
 .background-video{
-  width: auto;
+  width: 104%;
 
 }
 </style>
