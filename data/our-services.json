@@ -1,0 +1,8 @@
+{
+    "data": [
+      { "id":"1","description": "Corte de cabelo ", "image": "https://raw.githubusercontent.com/Leonardu76/images/main/baber/484403-200.png" },
+      { "id":"2","description": "Barba", "image": "https://raw.githubusercontent.com/Leonardu76/images/main/baber/1372069-200.png" },
+      { "id":"3","description": "Completo", "image": "https://raw.githubusercontent.com/Leonardu76/images/main/baber/804359-200.png" },
+      { "id":"4","description": "Corte Infantil", "image": "https://raw.githubusercontent.com/Leonardu76/images/main/baber/201341-200.png" }
+    ]
+  }

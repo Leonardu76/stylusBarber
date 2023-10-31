@@ -1,16 +1,18 @@
 
-<template class="">
-    <h1> Quem somos</h1>
+<template class="principal">
     <div v-for="dados in data.resume" :key="dados.id" >
+
         <a-row>
-            <a-col :span="9" class="resume-description">
+            
+            <a-col :span="10" class="resume-description">
                 <a-span >
+                    <h1> Quem somos</h1>
+
                     {{ dados.description }}
                 </a-span>
             </a-col>
 
-            <a-col :span="3">
-            </a-col>
+           
             <a-col :span="9">
 
                 <a-carousel arrows>
@@ -90,6 +92,8 @@ export default {
 
 .principal {
     margin-top: 20px;
+    background: #020101bf;
+
     
 }
 
@@ -99,13 +103,13 @@ export default {
     max-height: 600px;
 }
 
-.resume-description, h1{
-    font-family: Poppins;
-    font-size: 18px;
+.resume-description{
+    font-size: 21px;
     word-break: break-word;
-    color: #fff;
-    margin-left: 40px;
+    margin-left: 75px;
+    margin-right: 50px;
     line-height: 33px;
+    text-align: center;
 
 }
 

@@ -1,21 +1,26 @@
 <template>
-  
   <a-space direction="vertical" :style="{ width: '100%' }">
     <a-layout>
       <div class="header">
-        <Menu/>
+        <Menu />
         <Slide />
-      </div >
-      <div class="body">
-        <a-layout-content>
-          <Banner/>
-        </a-layout-content>
       </div>
+      <div class="body">
 
-      <a-layout-content class="about">
-          <About/>
+
+        <a-layout-content class="about">
+          <About />
           <br>
         </a-layout-content>
+
+        <a-layout-content>
+          <Banner />
+        </a-layout-content>
+
+        <a-layout-content class="services">
+          <OurServices />
+        </a-layout-content>
+      </div>
       <a-layout-footer>Footer</a-layout-footer>
     </a-layout>
   </a-space>
@@ -30,16 +35,17 @@ export default {
 
 
 <style scoped>
-body {
-}
-.header{
+body {}
+
+.header {
   width: 100%;
 }
 
-.about{
-  background: #020101bf;
+.about {
   margin-top: 4px;
+}
 
-
+.services {
+  margin-top: 5%;
 }
 </style>
