@@ -11,4 +11,6 @@ export default defineNuxtConfig({
       Poppins: true, // Habilita a fonte Poppins
     },
   },
+  css: [
+'/plugins/custom-antd-theme.css'],
 })

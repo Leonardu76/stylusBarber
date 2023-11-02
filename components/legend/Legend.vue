@@ -32,7 +32,7 @@ export default {
 
 .ant-card {
     background: rgba(0, 0, 0, 0.65);
-    border: 1px solid white;
+    border: 1px solid var(--terciary-color);
 }
 
 p {

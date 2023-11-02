@@ -1,5 +1,8 @@
 
-<template class="principal">
+<template >
+  <div class="principal">
+
+
   <h1> Nossos Serviços</h1>
   <a-row class="card-div">
     <div v-for="dados in data.data" :key="dados.id">
@@ -17,6 +20,8 @@
 
     </div>
   </a-row>
+</div>
+
 </template>
 
 
@@ -44,16 +49,20 @@ export default {
 h1 {
   text-align: center;
   font-family: Poppins;
+  text-transform: uppercase;
+  padding-bottom: 40px;
 }
 
 .card-div {
   justify-content: center;
+  height: 200px;
+
 }
 
 .card:hover{
   transition: 1s;
   width: 240px;
-  box-shadow: -2px -14px 33px 1px #181817;
+  box-shadow: -2px -14px 33px 1px #010b0cde;
   font-size:18px;
 }
 

@@ -33,12 +33,16 @@ export default {
 
 .ant-btn {
     font-size: 16px;
+    transition: 1s;
     padding: 0px 21px;
+
 }
 
 .ant-btn:hover {
-    border-color: rgb(6, 179, 164);
-    color: rgb(6, 179, 164);
+    border-color: var(--terciary-color);;
+    color: var(--terciary-color);
+    font-size: 17px;
+    transition: 1s;
 }
 
 .button:hover .anticon-whats-app {

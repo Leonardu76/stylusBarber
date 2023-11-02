@@ -1,0 +1,14 @@
+.ant-image-preview-root .ant-image-preview-mask  {
+    background-color: rgba(12, 11, 11, 0.918); 
+  }
+
+.ant-carousel .slick-dots li.slick-active button{
+    background-color: var(--terciary-color);
+}
+
+:root {
+    --secondary-color: #010b0cde; 
+    --terciary-color: #F2B885; 
+  }
+
+

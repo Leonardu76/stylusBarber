@@ -1,21 +1,21 @@
 
 <template class="principal">
-    <div v-for="dados in data.resume" :key="dados.id" >
+    <div v-for="dados in data.resume" :key="dados.id">
 
         <a-row>
-            
+
             <a-col :span="10" class="resume-description">
-                <a-span >
-                    <h1> Quem somos</h1>
+                <a-span>
+                    <h1>Quem somos</h1>
 
                     {{ dados.description }}
                 </a-span>
             </a-col>
 
-           
+
             <a-col :span="9">
 
-                <a-carousel arrows>
+                <a-carousel arrows autoplay>
                     <template #prevArrow>
                         <div class="custom-slick-arrow" style="left: 10px; z-index: 1">
                             <left-circle-outlined />
@@ -76,9 +76,9 @@ export default {
     width: 25px;
     height: 25px;
     font-size: 25px;
-    background-color: rgba(31, 45, 61, 0.11);
     transition: ease all 0.3s;
-    opacity: 0.3;
+    opacity: 0.7;
+    color: var(--terciary-color);
     z-index: 1;
 }
 
@@ -93,25 +93,24 @@ export default {
 .principal {
     margin-top: 20px;
     background: #020101bf;
-
-    
 }
-
 
 .img-resume {
     height: 500px;
     max-height: 600px;
 }
 
-.resume-description{
+.resume-description {
     font-size: 21px;
     word-break: break-word;
-    margin-left: 75px;
-    margin-right: 50px;
+    margin-left: 105px;
     line-height: 33px;
-    text-align: center;
-
+    color: white;
+    padding: 40px;
+    background: var(--secondary-color);
 }
 
-
+h1 {
+    text-align: center;
+}
 </style>
