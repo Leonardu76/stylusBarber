@@ -1,14 +1,15 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 
 
 export default defineNuxtConfig({
-  plugins:['@/plugins/antd'],
+  plugins:['@/plugins/antd'
+],
   modules: [
     '@nuxtjs/google-fonts',
+    'nuxt-aos',
   ],
   googleFonts: {
     families: {
-      Poppins: true, // Habilita a fonte Poppins
+      Poppins: true, 
     },
   },
   css: [

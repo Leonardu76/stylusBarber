@@ -1,70 +1,96 @@
 
 <template class="principal">
-    <div v-for="dados in data.resume" :key="dados.id">
+    <div v-if="loading">
+        <Skeleton :customRows="2" customWidth="50%" />
+    </div>
+    <div v-else data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+        <div v-for="dados in data.resume" :key="dados.id">
 
-        <a-row>
+            <a-row class="body">
 
-            <a-col :span="10" class="resume-description">
-                <a-span>
-                    <h1>Quem somos</h1>
+                <a-col :span="10" class="resume-description">
+                    <a-span>
+                        <h1>Quem somos</h1>
 
-                    {{ dados.description }}
-                </a-span>
-            </a-col>
+                        {{ dados.description }}
+                    </a-span>
+                </a-col>
 
 
-            <a-col :span="9">
+                <a-col :span="9" class="resume-photos">
 
-                <a-carousel arrows autoplay>
-                    <template #prevArrow>
-                        <div class="custom-slick-arrow" style="left: 10px; z-index: 1">
-                            <left-circle-outlined />
+                    <a-carousel arrows autoplay>
+                        <template #prevArrow>
+                            <div class="custom-slick-arrow" style="left: 10px; z-index: 1">
+                                <left-circle-outlined />
+                            </div>
+                        </template>
+                        <template #nextArrow>
+                            <div class="custom-slick-arrow" style="right: 10px">
+                                <right-circle-outlined />
+                            </div>
+                        </template>
+
+                        <div v-for="img in dados.img">
+                            <div class="img-resume" :style="{
+                                backgroundImage: `url(${img})`,
+                                backgroundSize: 'cover',
+                                backgroundRepeat: 'no-repeat',
+
+                            }">
+                            </div>
                         </div>
-                    </template>
-                    <template #nextArrow>
-                        <div class="custom-slick-arrow" style="right: 10px">
-                            <right-circle-outlined />
-                        </div>
-                    </template>
-
-                    <div v-for="img in dados.img">
-                        <div class="img-resume" :style="{
-                            backgroundImage: `url(${img})`,
-                            backgroundSize: 'cover',
-                            backgroundRepeat: 'no-repeat',
-
-                        }">
-                        </div>
-                    </div>
-                </a-carousel>
+                    </a-carousel>
 
 
-            </a-col>
-        </a-row>
+                </a-col>
+            </a-row>
 
+        </div>
 
     </div>
 </template>
 
 
 <script >
-import resume from '../../data/resume-about.json'
+import Skeleton from '../load/skeleton/DefaultSkeleton.vue';
+
 import { LeftCircleOutlined, RightCircleOutlined } from '@ant-design/icons-vue';
 
 export default {
     data() {
         return {
-            data: resume,
+            loading: true,
+            data: [],
         }
     }, components: {
         LeftCircleOutlined,
-        RightCircleOutlined
-    }
+        RightCircleOutlined,
+        Skeleton
+    },
+    mounted() {
+        import('../../data/resume-about.json').then((data) => {
+            this.data = data;
+            this.loading = false;
+        })
+
+    },
 }
 </script>
 
 
 <style scoped>
+:deep(.ant-skeleton .ant-skeleton-content .ant-skeleton-paragraph >li) {
+    height: 500px;
+    max-width: 600px;
+    display: inline-flex;
+
+}
+
+:deep(.ant-skeleton .ant-skeleton-content .ant-skeleton-paragraph >li:last-child) {
+    width: 500px !important;
+}
+
 :deep(.slick-slide) {
     text-align: center;
     height: 470px;
@@ -113,4 +139,26 @@ export default {
 h1 {
     text-align: center;
 }
+
+
+@media screen and (max-width: 767px) {
+    .body {
+        flex-direction: column-reverse;
+    }
+
+    .resume-photos, .resume-description {
+        max-width: 640px;
+        width: 100%;
+    }
+    .resume-description{
+        margin-left: unset;
+
+    }
+}
+
+@media screen and (min-width: 768px)  and (max-width:1121px) {
+    .resume-description{
+        height: 470px;
+        overflow: auto;
+    }}
 </style>

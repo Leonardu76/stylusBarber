@@ -1,5 +1,11 @@
 <template>
   <a-space direction="vertical" :style="{ width: '100%' }">
+    <div v-if="loading">
+<Loader/>
+    </div>
+    <div v-else>
+
+
     <a-layout>
       <div class="header">
         <Menu />
@@ -28,13 +34,29 @@
       </div>
       <a-layout-footer>Footer</a-layout-footer>
     </a-layout>
+  </div>
+
   </a-space>
 </template>
 
 <script>
+  import Loader from '../components/load/loader/Loader.vue';
 export default {
 
-  name: 'IndexPage'
+  data() {
+    return {
+      loading: true,
+    };
+  },
+  components: {
+    Loader,
+  },
+  mounted() {
+      name: 'IndexPage'
+      this.loading = false;
+      
+  },
+
 }
 </script>
 

@@ -8,10 +8,10 @@
                 backgroundRepeat: 'no-repeat',
                 height: '150px',
             }" class="slide-with-overlay">
-                <div class="overlay">
+                <div data-aos="fade-zoom-in" data-aos-delay="150" class="overlay">
                     <h1>{{ dados.description }}</h1>
                     <div class="whatsapp">
-                        <Whatsapp text="Entrar em contato"/>
+                        <Whatsapp text="Entrar em contato" />
                     </div>
                 </div>
 
@@ -33,7 +33,9 @@ export default {
 .banner-home {
     height: 150px;
 }
-h1, .whatsapp{
+
+h1,
+.whatsapp {
     color: #fff;
     text-align: center;
     margin-top: 20px;
@@ -41,6 +43,7 @@ h1, .whatsapp{
     font-family: Poppins;
 
 }
+
 .slide-with-overlay {
     position: relative;
 }
@@ -54,8 +57,25 @@ h1, .whatsapp{
     background: rgba(0, 0, 0, 0.767);
 }
 
-.principal{
+.principal {
     margin-top: 3px;
 }
 
-</style>
+@media screen and (max-width:767px) {
+
+    .slide-with-overlay,
+    .banner-home {
+        height: 150px;
+    }
+    h1 {
+        font-size: 17px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1200px){
+
+    .slide-with-overlay,
+    .banner-home {
+        height: 170px;
+    }
+}</style>

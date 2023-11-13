@@ -1,13 +1,20 @@
 <template lang="">
-    <div>
-        Em breve!!
+    <div class="principal" >
+
+        <div >
+            <Menu />
+            
+        </div>
     </div>
 </template>
+
 <script>
-export default {
-    
-}
 </script>
-<style lang="">
+
+<style scoped>
+.principal{
+    background-color: var(--secondary-color);
+    height: 600px;
+}
     
 </style>

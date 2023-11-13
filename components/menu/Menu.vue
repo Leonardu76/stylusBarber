@@ -1,16 +1,40 @@
 <template>
-    <div class="principal centered-container">
+    <div class="principal centered-container menu-desktop">
 
         <a-row type="flex" justify="center" align="middle">
             <div v-for="dados in data.menu" :key="dados.id">
-                <nuxt-link :to="dados.url" >
+                <nuxt-link :to="dados.url">
                     <a-col class="gutter-row" :span="2">
-                        <div class="gutter-box active">{{ dados.name }}</div>
+                        <div :class="'/' + dados.url ==  currentUrl ? 'gutter-box active' : 'gutter-box inactive'" >{{ dados.name }}</div>
                     </a-col>
                 </nuxt-link>
             </div>
         </a-row>
+    </div>
+    <div class="principal menu-mobile">
+        <input type="checkbox" id="burger-toggle">
+        <label for="burger-toggle" class="burger-menu">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </label>
+        <nav class="menu">
 
+            <div class="menu-inner">
+
+                <ul class="menu-nav">
+
+                    <div v-for="dados in data.menu" :key="dados.id">
+                        <nuxt-link :to="dados.url">
+                            <li class="menu-nav-item"><a class="menu-nav-link" href="#"><span>
+                                        <div  data-aos="zoom-out" data-aos-delay="1000">{{ dados.name }}</div>
+                                    </span></a>
+                            </li>
+                        </nuxt-link>
+                    </div>
+                </ul>
+            </div>
+        </nav>
     </div>
 </template>
 
@@ -21,7 +45,11 @@ export default {
         return {
             data: menu,
         }
+    },  computed: {
+    currentUrl() {
+      return this.$route.fullPath;
     }
+  }
 }
 </script>
 
@@ -42,27 +70,190 @@ export default {
 
 
 }
-.centered-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.principal {
-    z-index: 1;
-    width: 100%;
-    position: absolute;
-
-
-}
-
-.gutter-box:hover{
-    font-size: 13.5px;
-    transition: 1s;
-    border-bottom: 1px solid var(--terciary-color);;
+.active{
+    border-bottom: 1px solid var(--terciary-color);
+    color: var(--terciary-color);
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
 }
 
+.active:hover{
+    border-bottom: 1px solid var(--primary-color) ;
+    color: var(--primary-color) ;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.principal {
+    z-index: 1;
+    width: 100%;
+    position: absolute;
+}
+
+.inactive:hover {
+    border-bottom: 1px solid var(--terciary-color) ;
+    color: var(--terciary-color) ;
+    font-size: 13.5px;
+    transition: 1s;
+    border-bottom: 1px solid ;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    
+}
+
+#burger-toggle {
+    position: relative;
+    appearance: none;
+    opacity: 0;
+    display: none;
+}
+
+#burger-toggle:checked~.menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+#burger-toggle:checked~.menu .menu-nav-link span div,
+#burger-toggle:checked~.menu img,
+#burger-toggle:checked~.menu .title p {
+    transform: translateY(0);
+    transition: 1.2s 0.1s cubic-bezier(0.35, 0, 0.07, 1);
+}
+
+
+
+#burger-toggle:checked~.burger-menu .line::after {
+    transform: translateX(0);
+}
+
+#burger-toggle:checked~.burger-menu .line:nth-child(1) {
+    transform: translateY(calc(var(--burger-menu-radius) / 30)) rotate(45deg);
+    background-color: #ffffff;
+}
+
+#burger-toggle:checked~.burger-menu .line:nth-child(2) {
+    transform: scaleX(0);
+    background-color: #ffffff;
+}
+
+#burger-toggle:checked~.burger-menu .line:nth-child(3) {
+    transform: translateY(calc(var(--burger-menu-radius) / -5)) rotate(-45deg);
+    background-color: #ffffff;
+}
+
+.burger-menu {
+    --burger-menu-radius: 4em;
+    position: absolute;
+    top: 10px;
+    right: 9%;
+    z-index: 100;
+    display: block;
+    width: var(--burger-menu-radius);
+    height: var(--burger-menu-radius);
+    outline: none;
+    cursor: pointer;
+}
+
+.burger-menu .line {
+    position: absolute;
+    left: 25%;
+    width: 50%;
+    height: 3px;
+    background: var(--primary-color) ;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.burger-menu .line:nth-child(1) {
+    top: 32%;
+}
+
+.burger-menu .line:nth-child(2) {
+    top: 42%;
+}
+
+.burger-menu .line:nth-child(3) {
+    top: 53%;
+}
+
+
+
+.burger-menu .line:nth-child(2)::after {
+    transition-delay: 0.1s;
+}
+
+.burger-menu .line:nth-child(3)::after {
+    transition-delay: 0.2s;
+}
+
+
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #1a1e23;
+    opacity: 0;
+    overflow-x: hidden;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+@media screen and (min-width: 750px) {
+    .menu-mobile {
+        display: none;
+    }
+    .menu-desktop{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .menu-mobile {
+        display: relative;
+        position: fixed;
+    }
+    .menu-desktop{
+        display: none;
+    }
+}
+
+.menu-nav {
+    display: flex;
+    line-height: 65px;
+    font-size: 150%;
+    text-transform: uppercase;
+    margin-left: 100px;
+    list-style-type: none;
+    margin-top: 10%;
+    flex-direction: column;
+}
+
+
+
+.menu-nav-item {
+    padding: 0em 1em;
+}
+
+.menu-nav-link {
+    color: white;
+    text-decoration: none;
+}
+
+.menu-nav-link span {
+    overflow: hidden;
+}
 </style>
 

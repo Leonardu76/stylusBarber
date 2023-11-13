@@ -42,4 +42,11 @@ p {
     line-height: 1.5;
     word-break: break-word;
 }
+
+@media screen and (max-width: 767px) {
+    .legend-slide {
+        width: 700px;
+        max-width: unset;
+        min-width: unset;
+    }}
 </style>
