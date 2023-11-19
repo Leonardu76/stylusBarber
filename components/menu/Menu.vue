@@ -2,6 +2,11 @@
     <div class="principal centered-container menu-desktop">
 
         <a-row type="flex" justify="center" align="middle">
+            <nuxt-link to='/'>
+                        <img class="logo"
+                            src="https://raw.githubusercontent.com/Leonardu76/images/main/baber/Ilustra%C3%A7%C3%A3o_de_barbearia_vintage___Vetor_Gr%C3%A1tis-removebg-preview.png"
+                            alt="">
+                    </nuxt-link>
             <div v-for="dados in data.menu" :key="dados.id">
                 <nuxt-link :to="dados.url">
                     <a-col class="gutter-row" :span="2">
@@ -26,9 +31,9 @@
 
                     <div v-for="dados in data.menu" :key="dados.id">
                         <nuxt-link :to="dados.url">
-                            <li class="menu-nav-item"><a class="menu-nav-link" href="#"><span>
-                                        <div  data-aos="zoom-out" data-aos-delay="1000">{{ dados.name }}</div>
-                                    </span></a>
+                            <li class="menu-nav-item"><span class="menu-nav-link"  >
+                                        <div  :class="'/' + dados.url ==  currentUrl ? 'menu-link active-mobile' : 'menu-link inactive-mobile'" data-aos="zoom-out" data-aos-delay="1000">{{ dados.name }}</div>
+                                    </span>
                             </li>
                         </nuxt-link>
                     </div>
@@ -95,6 +100,9 @@ export default {
     position: absolute;
 }
 
+.logo {
+    width: 140px;
+}
 .inactive:hover {
     border-bottom: 1px solid var(--terciary-color) ;
     color: var(--terciary-color) ;
@@ -249,11 +257,19 @@ export default {
 
 .menu-nav-link {
     color: white;
-    text-decoration: none;
 }
 
-.menu-nav-link span {
+.menu-nav-link {
     overflow: hidden;
 }
+.active-mobile{
+    text-decoration:underline ;
+    text-decoration-color: var(--terciary-color);
+}
+.inactive-mobile{
+    text-decoration: underline ;
+    text-decoration-color: #010b0cde;
+}
+
 </style>
 

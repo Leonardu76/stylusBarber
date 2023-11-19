@@ -36,7 +36,7 @@
           </a-layout-content>
         </div>
 
-        <a-layout-footer><Footer/></a-layout-footer>
+        <a-layout-content><Footer/></a-layout-content>
       </a-layout>
     </div>
 
