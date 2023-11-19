@@ -1,46 +1,54 @@
 <template>
   <a-space direction="vertical" :style="{ width: '100%' }">
     <div v-if="loading">
-<Loader/>
+      <Loader />
     </div>
     <div v-else>
 
 
-    <a-layout>
-      <div class="header">
-        <Menu />
-        <Slide />
-      </div>
-      <div class="body">
+      <a-layout>
+        <div class="header">
+          <Menu />
+          <Slide />
+        </div>
+        <div class="body">
 
-        <a-layout-content>
-          <Banner />
-        </a-layout-content>
-        <a-layout-content class="about">
-          <About />
-          <br>
-        </a-layout-content>
-
-        
-
-        <a-layout-content class="services">
-          <OurServices />
-        </a-layout-content>
+          <a-layout-content>
+            <Banner />
+          </a-layout-content>
+          <a-layout-content class="about">
+            <About />
+            <br>
+          </a-layout-content>
 
 
-        <a-layout-content class="gallery">
-          <Gallery />
-        </a-layout-content>
-      </div>
-      <a-layout-footer>Footer</a-layout-footer>
-    </a-layout>
-  </div>
+
+          <a-layout-content class="services">
+            <OurServices />
+          </a-layout-content>
+
+
+          <a-layout-content class="gallery">
+            <Gallery />
+          </a-layout-content>
+          <a-layout-content class="news">
+            <News />
+          </a-layout-content>
+        </div>
+
+        <a-layout-footer><Footer/></a-layout-footer>
+      </a-layout>
+    </div>
 
   </a-space>
 </template>
 
 <script>
-  import Loader from '../components/load/loader/Loader.vue';
+import Loader from '../components/load/loader/Loader.vue';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+
 export default {
 
   data() {
@@ -52,9 +60,10 @@ export default {
     Loader,
   },
   mounted() {
-      name: 'IndexPage'
-      this.loading = false;
-      
+    AOS.init();
+    name: 'IndexPage'
+    this.loading = false;
+
   },
 
 }
@@ -62,8 +71,7 @@ export default {
 
 
 <style scoped>
-.body {
-}
+.body {}
 
 .header {
   width: 100%;
@@ -78,6 +86,5 @@ export default {
   margin-top: 5%;
 }
 
-.gallery {
-}
+.gallery {}
 </style>

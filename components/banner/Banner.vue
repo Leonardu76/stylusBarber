@@ -21,12 +21,16 @@
 </template>
 <script>
 import banner from '../../data/banner.json'
+import Whatsapp from '../buttons/whatsapp/Whatsapp.vue';
+
 export default {
     data() {
         return {
             data: banner,
         }
-    }
+    },components: {
+        Whatsapp
+    },
 }
 </script>
 <style scoped>

@@ -3,7 +3,7 @@
     <div v-if="loading">
         <Skeleton :customRows="2" customWidth="50%" />
     </div>
-    <div v-else data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+    <div v-else data-aos="fade-up" data-aos-duration="1500">
         <div v-for="dados in data.resume" :key="dados.id">
 
             <a-row class="body">

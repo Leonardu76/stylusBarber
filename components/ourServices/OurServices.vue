@@ -8,6 +8,7 @@
 
       <h1> Nossos Serviços</h1>
       <a-row class="card-div" >
+        
         <div v-for="dados in data.data" :key="dados.id">
 
           <a-card hoverable class="card">

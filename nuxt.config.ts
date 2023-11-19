@@ -5,8 +5,8 @@ export default defineNuxtConfig({
 ],
   modules: [
     '@nuxtjs/google-fonts',
-    'nuxt-aos',
-  ],
+
+],
   googleFonts: {
     families: {
       Poppins: true, 

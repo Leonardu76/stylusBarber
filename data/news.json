@@ -1,0 +1,35 @@
+{
+  "data": [
+    {
+      "id": "1",
+      "title": "6 Práticas Para a Rotina",
+      "content": "Lorem ipsum dolor sit sed asperiores excepturi tempore! Lorem ipsum dolor sit sed asperiores excepturi tempore! Lorem ipsum dolor sit sed asperiores excepturi tempore! Lorem ipsum dolor sit sed asperiores excepturi tempore!",
+      "img": "https://raw.githubusercontent.com/Leonardu76/images/main/baber/iStock-1297014288-600x400.webp",
+      "date": "15/04/21"
+    },
+    {
+      "id": "2",
+      "title": "Cuidados com a barba: 5 dicas para pôr em prática no dia a dia",
+      "content": "Lorem ipsum dolor sit sed asperiores excepturi tempore! Lorem ipsum dolor sit sed asperiores excepturi tempore! Lorem ipsum dolor sit sed asperiores excepturi tempore! Lorem ipsum dolor sit sed asperiores excepturi tempore!",
+      "img": "https://raw.githubusercontent.com/Leonardu76/images/main/baber/jj-jordan-JBqwqLG0SXw-unsplash.jpg",
+      "date": "15/05/22"
+
+    },
+    {
+      "id": "3",
+      "title": "5 Dicas Essenciais - Como Devo Cuidar do Meu Cabelo",
+      "content": "Lorem ipsum dolor sit sed asperiores excepturi tempore! Lorem ipsum dolorasperiores excepturi tempore! Lorem ipsum do asperiores excepturi tempore! Lorem ipsum do sit sed asperiores excepturi tempore! Lorem ipsum dolor sit sed asperiores excepturi tempore! Lorem ipsum dolor sit sed asperiores excepturi tempore!",
+      "img": "https://raw.githubusercontent.com/Leonardu76/images/main/baber/barber-shop-in-iran-5212053_1280.jpg",
+      "date": "17/07/22"
+
+    },
+    {
+      "id": "4",
+      "title": "Os 9 melhores shampoos para caspa",
+      "content": "Lorem ipsum dolor sit sed asperiores excepturi tempore! Lorem ipsum dolor sit sed asperiores excepturi tempore! Lorem ipsum dolor sit sed asperiores excepturi tempore! Lorem ipsum dolor sit sed asperiores excepturi tempore!",
+      "img": "https://raw.githubusercontent.com/Leonardu76/images/main/baber/28822697-uma-branco-garrafa-do-xampu-carrinhos-em-a-mesa-dentro-banheiro-ai-generativo-gratis-foto.jpg",
+      "date": "26/09/23"
+
+    }
+  ]
+}
