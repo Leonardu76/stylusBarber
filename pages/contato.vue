@@ -6,6 +6,8 @@
             
         </div>
     </div>
+    <a-layout-content><Footer/></a-layout-content>
+
 </template>
 
 <script>

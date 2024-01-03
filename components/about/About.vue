@@ -44,11 +44,19 @@
 
 
                 </a-col>
+                
             </a-row>
 
         </div>
-
+        <nuxt-link to='quemsomos'>
+<div class="button-div">
+    <a-button class="button" ghost> Ver mais
+    </a-button>
+</div>
+</nuxt-link>
     </div>
+
+
 </template>
 
 
@@ -140,7 +148,30 @@ h1 {
     text-align: center;
 }
 
+.button-div {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    font-size: 15px;
+}
 
+.button {
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    ;
+}
+
+.ant-btn:hover {
+    border-color: var(--terciary-color);
+    ;
+    color: var(--terciary-color);
+    font-size: 16px;
+    transition: 1s;
+}
+
+.ant-btn {
+    transition: 1s;
+}
 @media screen and (max-width: 767px) {
     .body {
         flex-direction: column-reverse;

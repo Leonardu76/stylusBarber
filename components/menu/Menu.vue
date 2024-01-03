@@ -1,16 +1,17 @@
 <template>
-    <div class="principal centered-container menu-desktop">
+    <div :class="{ 'principal': isMenuHome }" class=" centered-container menu-desktop">
 
         <a-row type="flex" justify="center" align="middle">
             <nuxt-link to='/'>
-                        <img class="logo"
-                            src="https://raw.githubusercontent.com/Leonardu76/images/main/baber/Ilustra%C3%A7%C3%A3o_de_barbearia_vintage___Vetor_Gr%C3%A1tis-removebg-preview.png"
-                            alt="">
-                    </nuxt-link>
+                <img class="logo"
+                    src="https://raw.githubusercontent.com/Leonardu76/images/main/baber/Ilustra%C3%A7%C3%A3o_de_barbearia_vintage___Vetor_Gr%C3%A1tis-removebg-preview.png"
+                    alt="">
+            </nuxt-link>
             <div v-for="dados in data.menu" :key="dados.id">
                 <nuxt-link :to="dados.url">
                     <a-col class="gutter-row" :span="2">
-                        <div :class="'/' + dados.url ==  currentUrl ? 'gutter-box active' : 'gutter-box inactive'" >{{ dados.name }}</div>
+                        <div :class="'/' + dados.url == currentUrl ? 'gutter-box active' : 'gutter-box inactive'">{{
+                            dados.name }}</div>
                     </a-col>
                 </nuxt-link>
             </div>
@@ -31,9 +32,10 @@
 
                     <div v-for="dados in data.menu" :key="dados.id">
                         <nuxt-link :to="dados.url">
-                            <li class="menu-nav-item"><span class="menu-nav-link"  >
-                                        <div  :class="'/' + dados.url ==  currentUrl ? 'menu-link active-mobile' : 'menu-link inactive-mobile'" data-aos="zoom-out" data-aos-delay="1000">{{ dados.name }}</div>
-                                    </span>
+                            <li class="menu-nav-item"><span class="menu-nav-link">
+                                    <div :class="'/' + dados.url == currentUrl ? 'menu-link active-mobile' : 'menu-link inactive-mobile'"
+                                        data-aos="zoom-out" data-aos-delay="1000">{{ dados.name }}</div>
+                                </span>
                             </li>
                         </nuxt-link>
                     </div>
@@ -45,16 +47,23 @@
 
 <script>
 import menu from '../../data/menu.json'
-export default {
+export default { 
+    props: {
+        isMenuHome: {
+      type: Boolean,
+      default: true
+    }
+
+    },
     data() {
         return {
             data: menu,
         }
-    },  computed: {
-    currentUrl() {
-      return this.$route.fullPath;
+    }, computed: {
+        currentUrl() {
+            return this.$route.fullPath;
+        }
     }
-  }
 }
 </script>
 
@@ -75,19 +84,21 @@ export default {
 
 
 }
-.active{
+
+.active {
     border-bottom: 1px solid var(--terciary-color);
     color: var(--terciary-color);
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
 }
 
-.active:hover{
-    border-bottom: 1px solid var(--primary-color) ;
-    color: var(--primary-color) ;
+.active:hover {
+    border-bottom: 1px solid var(--primary-color);
+    color: var(--primary-color);
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
 }
+
 .centered-container {
     display: flex;
     justify-content: center;
@@ -103,15 +114,16 @@ export default {
 .logo {
     width: 140px;
 }
+
 .inactive:hover {
-    border-bottom: 1px solid var(--terciary-color) ;
-    color: var(--terciary-color) ;
+    border-bottom: 1px solid var(--terciary-color);
+    color: var(--terciary-color);
     font-size: 13.5px;
     transition: 1s;
-    border-bottom: 1px solid ;
+    border-bottom: 1px solid;
     border-bottom-right-radius: 15px;
     border-bottom-left-radius: 15px;
-    
+
 }
 
 #burger-toggle {
@@ -172,7 +184,7 @@ export default {
     left: 25%;
     width: 50%;
     height: 3px;
-    background: var(--primary-color) ;
+    background: var(--primary-color);
     border-radius: 10px;
     overflow: hidden;
     transition: 0.5s;
@@ -223,7 +235,8 @@ export default {
     .menu-mobile {
         display: none;
     }
-    .menu-desktop{
+
+    .menu-desktop {
         display: block;
     }
 }
@@ -233,7 +246,8 @@ export default {
         display: relative;
         position: fixed;
     }
-    .menu-desktop{
+
+    .menu-desktop {
         display: none;
     }
 }
@@ -262,14 +276,14 @@ export default {
 .menu-nav-link {
     overflow: hidden;
 }
-.active-mobile{
-    text-decoration:underline ;
+
+.active-mobile {
+    text-decoration: underline;
     text-decoration-color: var(--terciary-color);
 }
-.inactive-mobile{
-    text-decoration: underline ;
-    text-decoration-color: #010b0cde;
-}
 
-</style>
+.inactive-mobile {
+    text-decoration: underline;
+    text-decoration-color: #010b0cde;
+}</style>
 

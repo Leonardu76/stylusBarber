@@ -7,6 +7,8 @@
     <div v-else data-aos="fade-up" data-aos-duration="1500">
 
       <h1> Nossos Serviços</h1>
+      <nuxt-link to='nossosservicos'>        
+
       <a-row class="card-div" >
         
         <div v-for="dados in data.data" :key="dados.id">
@@ -20,6 +22,7 @@
           </a-card>
         </div>
       </a-row>
+    </nuxt-link>
     </div>
   </div>
 </template>

@@ -19,10 +19,13 @@
 
                 </a-image-preview-group>
             </div>
+            <nuxt-link to='fotos'>            
+
             <div class="button">
                 <a-button ghost> Ver mais
                 </a-button>
             </div>
+        </nuxt-link>
         </div>
     </div>
 </template>
