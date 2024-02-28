@@ -14,4 +14,6 @@
     --terciary-color: #F2B885; 
   }
 
-
+body{
+    margin:unset;
+}
