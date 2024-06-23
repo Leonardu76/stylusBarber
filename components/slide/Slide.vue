@@ -5,16 +5,17 @@
 
   <div v-else>
 
-    <a-carousel autoplay>
-      <a-carousel-slide v-for="dados in slides.slides" :key="dados.id">
+    <a-carousel autoplay class="background-slide-div">
+      <a-carousel-slide class="background-slide" v-for="dados in slides.slides" :key="dados.id">
         <div v-if="dados.type === 'imagem'" :style="{
           backgroundImage: `url(${dados.url})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          height: '730px',
           padding: '20px',
-        }" class="slide-with-overlay">
+          height: '730px',
+
+        }" class="slide-with-overlay slide-image-type">
           <div class="overlay">
             <div v-if="dados.legend">
               <Legend :legend="dados.legend" />
@@ -22,8 +23,10 @@
           </div>
         </div>
         <div v-else class="slide-with-overlay">
-          <video class="background-video" src="../../public/production_id_3998510 (2160p).mp4" loop="" autoplay=""
+          <video class="background-video desktop-video" src="../../public/production_id_3998510 (2160p).mp4" loop="" autoplay=""
             muted=""></video>
+            <video class="background-video mobile-video" src="../../public/videos-slide.mobile.mp4" loop autoplay muted></video>
+
           <div class="overlay"> </div>
 
         </div>
@@ -87,6 +90,16 @@ export default {
 .background-video {
   width: 104%;
 
+}
+
+
+@media (max-width: 991px) {
+  .desktop-video {
+    display: none;
+  }
+  .mobile-video {
+    display: block;
+  }
 }
 </style>
 
